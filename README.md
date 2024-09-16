@@ -1,14 +1,14 @@
-# Nerfies
+# Audio Texture Manipulation by Exemplar-Based Analogy
 
-This is the repository that contains source code for the [Nerfies website](https://nerfies.github.io).
+This is the repository that contains source code for the [project website](https://berkeley-speech-group.github.io/audio-texture-analogy/).
 
-If you find Nerfies useful for your work please cite:
+If you find our research useful for your work please cite:
 ```
-@article{park2021nerfies
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+@article{
+  author    = {Cheng, Kan Jen and Li, Tingle and Gopala, Anumanchipalli.},
+  title     = {Audio Texture Manipulation by Exemplar-Based Analogy},
+  journal   = {},
+  year      = {2024},
 }
 ```
 
