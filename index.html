@@ -242,18 +242,6 @@
       </div>
     </div>
     <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div> -->
-    <!--/ Paper video. -->
   </div>
 </section>
 
@@ -264,40 +252,32 @@
     <div class="columns is-centered">
 
       <!-- Visual Effects. -->
-      <!-- <div class="column">
+      <div class="column">
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
+          <h2 class="title is-3">Manipulation by Analogy</h2>
+          <img src="./static/images/mani_by_analogy.png">
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
+            We manipulate input speech (bottom-left) based on an exemplar pair (top), where the pair defines the desired transformation such as adding, removing, or replacing specific sound elements.
           </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
         </div>
-      </div> -->
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <!-- <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div> -->
       </div>
+      <!--/ Visual Effects. -->
     </div>
-    <!--/ Matting. -->
+
+    <div class="columns is-centered">
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Model Architecture</h2>
+          <img src="./static/images/model.png">
+          <p>
+            Given the input audio and exemplar pair, our goal is to transform the input to match the texture transformation demonstrated by the exemplar pair. We employ a pre-trained VAE encoder to encode both the input and target spectrograms to the latent space, and feed them into a latent diffusion model together with the exemplar pair embedding and positional encoding. Finally, we use pre-trained VAE decoder and HiFi-GAN vocoder to reconstruct the waveform from the latent space. Note that the VAE encoder for the target spectrogram is not used at test time.
+          </p>
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+    </div>
+
 
     <!-- Animation. -->
     <div class="columns is-centered">
