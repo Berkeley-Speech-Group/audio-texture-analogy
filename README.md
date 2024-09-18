@@ -7,7 +7,7 @@ If you find our research useful for your work please cite:
 @article{
   author    = {Cheng, Kan Jen and Li, Tingle and Gopala, Anumanchipalli.},
   title     = {Audio Texture Manipulation by Exemplar-Based Analogy},
-  journal   = {},
+  journal   = {ArXiv},
   year      = {2024},
 }
 ```
