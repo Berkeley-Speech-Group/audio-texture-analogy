@@ -5,7 +5,7 @@ This is the repository that contains source code for the [project website](https
 If you find our research useful for your work please cite:
 ```
 @article{
-  author    = {Cheng, Kan Jen and Li, Tingle and Gopala, Anumanchipalli},
+  author    = {Cheng, Kan Jen and Li, Tingle and Anumanchipalli, Gopala},
   title     = {Audio Texture Manipulation by Exemplar-Based Analogy},
   journal   = {ArXiv},
   year      = {2024},
