@@ -63,8 +63,8 @@
           More Research
         </a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" href="">
-            None
+          <a class="navbar-item" href="https://people.eecs.berkeley.edu/~gopala/">
+            Berkeley Speech Group
           </a>
         </div>
       </div>
@@ -79,7 +79,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Audio Texture Manipulation by Exemplar-Based Analogy</h1>
+          <h1 class="title is-1 publication-title">Audio Texture Manipulation <br>by Exemplar-Based Analogy</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="">Kan Jen Cheng</a>,</span>
@@ -153,79 +153,6 @@
   </div>
 </section>
 
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section> -->
-
-
-<!-- <section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 
 <section class="section">
@@ -245,125 +172,117 @@
   </div>
 </section>
 
-
-<section class="section">
+<section class="section"></section>
   <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Manipulation by Analogy</h2>
+    <!-- Analogy. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Manipulation by Analogy</h2>
+        <div class="content has-text-justified">
           <img src="./static/images/mani_by_analogy.png">
           <p>
             We manipulate input speech (bottom-left) based on an exemplar pair (top), where the pair defines the desired transformation such as adding, removing, or replacing specific sound elements.
           </p>
         </div>
       </div>
-      <!--/ Visual Effects. -->
     </div>
+    <!--/ Analogy. -->
+  </div>
+</section>
 
-    <div class="columns is-centered">
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Model Architecture</h2>
+
+<section class="section"></section>
+  <div class="container is-max-desktop">
+    <!-- Model. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Model Architecture</h2>
+        <div class="content has-text-justified">
           <img src="./static/images/model.png">
           <p>
             Given the input audio and exemplar pair, our goal is to transform the input to match the texture transformation demonstrated by the exemplar pair. We employ a pre-trained VAE encoder to encode both the input and target spectrograms to the latent space, and feed them into a latent diffusion model together with the exemplar pair embedding and positional encoding. Finally, we use pre-trained VAE decoder and HiFi-GAN vocoder to reconstruct the waveform from the latent space. Note that the VAE encoder for the target spectrogram is not used at test time.
           </p>
         </div>
       </div>
-      <!--/ Visual Effects. -->
     </div>
-
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <!-- <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/> -->
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <!-- <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div> -->
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2209.00647">Visual Prompting via Image Inpainting
-            </a> introduces analogy in vision.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
+    <!--/ Model. -->
   </div>
 </section>
+
+<section class="section"></section>
+  <div class="container is-max-desktop">
+    <!-- In domain videos. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Addition Results with In-Domain Examples</h2>
+        <div class="content has-text-justified">
+          <video controls="controls" poster="./static/poster/add_indomain1.png">
+            <source src="./static/videos/add_indomain1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="content has-text-justified">
+          <video controls="controls" poster="./static/poster/add_indomain2.png">
+            <source src="./static/videos/add_indomain2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <h2 class="title is-3">Removal Results with In-Domain Examples</h2>
+        <div class="content has-text-justified">
+          <video controls="controls" poster="./static/poster/remove_indomain1.png">
+            <source src="./static/videos/remove_indomain1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="content has-text-justified">
+          <video controls="controls" poster="./static/poster/remove_indomain2.png">
+            <source src="./static/videos/remove_indomain2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <h2 class="title is-3">Replacement Results with In-Domain Examples</h2>
+        <div class="content has-text-justified">
+          <video controls="controls" poster="./static/poster/replace_indomain1.png">
+            <source src="./static/videos/replace_indomain1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="content has-text-justified">
+          <video controls="controls" poster="./static/poster/replace_indomain2.png">
+            <source src="./static/videos/replace_indomain2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <h2 class="title is-3">Generalization to Out-Of-Distribution Data</h2>
+        <div class="content has-text-justified">
+          <video controls="controls" poster="./static/poster/add_ood1.png">
+            <source src="./static/videos/add_ood1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="content has-text-justified">
+          <video controls="controls" poster="./static/poster/add_ood2.png">
+            <source src="./static/videos/add_ood2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="content has-text-justified">
+          <video controls="controls" poster="./static/poster/remove_ood1.png">
+            <source src="./static/videos/remove_ood1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="content has-text-justified">
+          <video controls="controls" poster="./static/poster/remove_ood2.png">
+            <source src="./static/videos/remove_ood2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="content has-text-justified">
+          <video controls="controls" poster="./static/poster/enc.png">
+            <source src="./static/videos/enc.mp4" type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+    <!--/ In domain videos. -->
+  </div>
+</section>
+
+
+
+
 
 
 <section class="section" id="BibTeX">
