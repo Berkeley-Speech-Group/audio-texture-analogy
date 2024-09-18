@@ -125,16 +125,18 @@
   </div>
 </section>
 
-<section class="section"></section>
+<section class="section">
   <div class="container is-max-desktop">
     <!-- Analogy. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Manipulation by Analogy</h2>
         <div class="content has-text-justified">
-          <img src="./static/images/mani_by_analogy.png">
+          <video controls="controls" poster="./static/images/mani_by_analogy.png">
+            <source src="./static/videos/teaser.mp4" type="video/mp4">
+          </video>
           <p>
-            We manipulate input speech (bottom-left) based on an exemplar pair (top), where the pair defines the desired transformation such as adding, removing, or replacing specific sound elements.
+            We manipulate input speech based on an exemplar pair, where the pair defines the desired transformation such as adding, removing, or replacing specific sound elements.
           </p>
         </div>
       </div>
@@ -144,27 +146,10 @@
 </section>
 
 
-<section class="section"></section>
-  <div class="container is-max-desktop">
-    <!-- Model. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Model Architecture</h2>
-        <div class="content has-text-justified">
-          <img src="./static/images/model.png">
-          <p>
-            Given the input audio and exemplar pair, our goal is to transform the input to match the texture transformation demonstrated by the exemplar pair. We employ a pre-trained VAE encoder to encode both the input and target spectrograms to the latent space, and feed them into a latent diffusion model together with the exemplar pair embedding and positional encoding. Finally, we use pre-trained VAE decoder and HiFi-GAN vocoder to reconstruct the waveform from the latent space. Note that the VAE encoder for the target spectrogram is not used at test time.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Model. -->
-  </div>
-</section>
 
-<section class="section"></section>
+<section class="section">
   <div class="container is-max-desktop">
-    <!-- In domain videos. -->
+    <!-- Addition In-Domain. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Addition Results with In-Domain Examples</h2>
@@ -178,6 +163,17 @@
             <source src="./static/videos/add_indomain2.mp4" type="video/mp4">
           </video>
         </div>
+      </div>
+    </div>
+    <!--/ Addition In-Domain. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Removal In-Domain. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
         <h2 class="title is-3">Removal Results with In-Domain Examples</h2>
         <div class="content has-text-justified">
           <video controls="controls" poster="./static/poster/remove_indomain1.png">
@@ -189,6 +185,17 @@
             <source src="./static/videos/remove_indomain2.mp4" type="video/mp4">
           </video>
         </div>
+      </div>
+    </div>
+    <!--/ Removal In-Domain. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Removal In-Domain. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
         <h2 class="title is-3">Replacement Results with In-Domain Examples</h2>
         <div class="content has-text-justified">
           <video controls="controls" poster="./static/poster/replace_indomain1.png">
@@ -200,6 +207,17 @@
             <source src="./static/videos/replace_indomain2.mp4" type="video/mp4">
           </video>
         </div>
+      </div>
+    </div>
+    <!--/ Removal In-Domain. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Generalization videos. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
         <h2 class="title is-3">Generalization to Out-Of-Distribution Data</h2>
         <div class="content has-text-justified">
           <video controls="controls" poster="./static/poster/add_ood1.png">
@@ -229,7 +247,25 @@
 
       </div>
     </div>
-    <!--/ In domain videos. -->
+    <!--/ Generalization videos. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Model. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Model Architecture</h2>
+        <div class="content has-text-justified">
+          <img src="./static/images/model.png">
+          <p>
+            Given the input audio and exemplar pair, our goal is to transform the input to match the texture transformation demonstrated by the exemplar pair. We employ a pre-trained VAE encoder to encode both the input and target spectrograms to the latent space, and feed them into a latent diffusion model together with the exemplar pair embedding and positional encoding. Finally, we use pre-trained VAE decoder and HiFi-GAN vocoder to reconstruct the waveform from the latent space. Note that the VAE encoder for the target spectrogram is not used at test time.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Model. -->
   </div>
 </section>
 
