@@ -28,7 +28,7 @@
 <body>
 
 <section class="hero">
-  <div class="hero-body">
+  <div class="hero-body" style="padding-bottom: 0rem;">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
@@ -50,24 +50,24 @@
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
-              <!-- <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2501.12385"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
                   <span>Paper</span>
                 </a>
-              </span> -->
-              <!-- <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2501.12385"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span> -->
+              </span>
               <!-- Video Link. -->
               <!-- <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
@@ -107,24 +107,6 @@
 </section>
 
 
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Audio texture manipulation involves modifying the perceptual characteristics of a sound to achieve specific transformations, such as adding, removing, or replacing auditory elements. In this paper, we propose an exemplar-based analogy model for audio texture manipulation. Instead of conditioning on text-based instructions, our method uses paired speech examples, where one clip represents the original sound and another illustrates the desired transformation. The model learns to apply the same transformation to new input, allowing for the manipulation of sound textures. We construct a quadruplet dataset representing various editing tasks, and train a latent diffusion model in a self-supervised manner. We show through quantitative evaluations and perceptual studies that our model outperforms text-conditioned baselines and generalizes well to real-world, out-of-distribution, and non-speech scenarios.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-  </div>
-</section>
-
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Analogy. -->
@@ -146,6 +128,23 @@
   </div>
 </section>
 
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Audio texture manipulation involves modifying the perceptual characteristics of a sound to achieve specific transformations, such as adding, removing, or replacing auditory elements. In this paper, we propose an exemplar-based analogy model for audio texture manipulation. Instead of conditioning on text-based instructions, our method uses paired speech examples, where one clip represents the original sound and another illustrates the desired transformation. The model learns to apply the same transformation to new input, allowing for the manipulation of sound textures. We construct a quadruplet dataset representing various editing tasks, and train a latent diffusion model in a self-supervised manner. We show through quantitative evaluations and perceptual studies that our model outperforms text-conditioned baselines and generalizes well to real-world, out-of-distribution, and non-speech scenarios.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
 
 
 <section class="section">
@@ -321,8 +320,8 @@
         <pre><code>@article{,
       author    = {Cheng, Kan Jen and Li, Tingle and Anumanchipalli, Gopala},
       title     = {Audio Texture Manipulation by Exemplar-Based Analogy},
-      journal   = {arXiv},
       year      = {2025},
+      booktitle = {2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}
     }</code></pre>
       </div>
     </div>
@@ -334,10 +333,10 @@
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="">
+         href="https://arxiv.org/pdf/2501.12385">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="" class="external-link" disabled>
+      <a class="icon-link" href="https://github.com/Berkeley-Speech-Group/audio-texture-analogy" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>
