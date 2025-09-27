@@ -7,7 +7,7 @@ The code implements the method described in our paper with the following differe
 
 
 ## Installation
-```
+```bash
 git clone https://github.com/Berkeley-Speech-Group/audio-texture-analogy.git
 conda create -n atm python=3.9
 conda activate atm
