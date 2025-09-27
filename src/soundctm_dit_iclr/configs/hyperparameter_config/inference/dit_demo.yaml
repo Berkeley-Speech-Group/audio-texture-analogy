@@ -1,0 +1,26 @@
+Experiment:
+  Experiment_name                     : "" # Experiment Name for logging in WandB
+  Project_name                        : "" # Project Name for logging in WandB
+  
+  # Model config
+  text_encoder_name: "clap" 
+  stage1_path: "./ckpt/utils/vae/"            # Path to VAE/stage1 model
+  ctm_unet_model_config: ""  # UNet model config. Specify only if diffusion_model_type is unet
+  teacher_model: ""          # Teacher model path. Not used while sampling
+
+  ema_model: "./ckpt/soundctm/ema_0.999_010446.pt"     # Path to EMA denoiser of trained student model 
+  training_args: "configs/dummy_summary.jsonl" 
+  clap_model_path: "./ckpt/utils/clap/630k-audioset-best.pt"          # Path to pretrained CLAP model
+  diffusion_model_type: "dit"  # Diffusion model type unet/dit
+  version: v1 
+  
+  # Test dataset config
+  sampling_rate: 44100  
+  target_length: 10.031
+  text_audio_pair_dataset: True # Specify True if dataset was Text and audio paired
+  load_mean_std_state_path: "./ckpt/soundctm/z_stats.pth"  # path to .pth file containing mean and std of dataset that model was trained on
+
+  # EDM config
+  sigma_data: 0.50
+  sigma_max: 80.0
+  sigma_min: 0.002

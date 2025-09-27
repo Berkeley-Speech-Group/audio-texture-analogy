@@ -1,0 +1,14 @@
+FROM tensorflow/tensorflow:2.13.0-gpu
+
+ENV DEBIAN_FRONTEND=noninteractive 
+
+RUN apt-get update && apt-get install git -y
+RUN pip install --upgrade pip
+RUN pip install pandas openl3 pyloudnorm
+RUN pip install descript-audio-codec pedalboard
+RUN pip install prettytable huggingface_hub==0.20.2 
+RUN pip install laion-clap==1.1.3 Pillow torch==2.1.0 torch-stoi==0.2.3 torchaudio==2.1.0 torchlibrosa==0.1.0 torchvision==0.16.0
+RUN pip install numpy==1.24.3 protobuf==3.20.3
+RUN pip install --upgrade numba
+RUN pip install soxr
+RUN pip install -e 'git+https://github.com/kkoutini/passt_hear21#egg=hear21passt'

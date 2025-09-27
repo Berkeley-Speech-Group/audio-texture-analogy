@@ -1,0 +1,122 @@
+Experiment:
+  Experiment_name                     : "" # Experiment Name for logging in WandB
+  Project_name                        : "" # Project Name for logging in WandB
+
+  model_params:
+    diffusion_model_type              : "dit" # Choose diffusion model type supported values are dit and unet
+    version                           : v2 # Version of SoundCTM DIT 1B. 
+    text_encoder_name                 : "clap"                             
+    unet_model_config                 : "" # Path to the unet model config provide only if you choose diffusion_model_type is unet
+    ctm_unet_model_config             : "" # Path to the CTM unet model config provide only if you choose diffusion_model_type is unet and it is different from teacher unet model
+    teacher_model_path                : "" # Path to trained teacher model 
+    stage1_path                       : "" # Path to Stage 1/VAEGAN model          
+    freeze_text_encoder               : True   # Freeze text encoder weights while training     
+    amodel                            : "None" # Type of audio model for CLAP Default: HTSAT-tiny
+    clap_model_path                   : "" # Path to the pretrained clap model
+
+  dataset_params:
+    train_file                        : "data/train.csv" # Path to train csv file 
+    text_column                       : caption          # Name of text column for text captions
+    audio_column                      : file_name        # Name of audio column for audio file paths
+    num_examples                      : -1               # Number of examples to use for training, -1 means all examples
+    uncond_prob                       : 0.1              # Probability of unconditional augmentation for CFG training
+    prefix                            : ""               # Specify if any prefix needs to be added for text captions
+    target_sec                        : 10.031           # Target audio length in seconds
+    audio_channel                     : 'mono'           # Audio channel to use for training
+    sampling_rate                     : 44100            # Sampling rate of audio files
+    text_audio_pair_dataset           : True             # Specify True if dataset is text audio pair dataset
+    evaluation_interval               : 5000
+
+    eval_batch_size                   : 1                      # Batch size for evaluation Default is 1
+    test_file                         : "data/test.csv"        # Path to test csv file
+    test_file_ACID                    : "data/clap_test.csv"   # Path to test csv file with Youtube IDs for AudioCaps 
+    reference_dir                     : "data/audiocaps/test/" # Path to reference audio files for AudioCaps dataset
+    eval_num_steps                    : 1                      # Number of sampling steps to evaluate
+    nu                                : 1.0                    #
+    omega                             : 5.0                    #
+    sampling_gamma                    : 0.                     # Sampling gamma value for evaluation 
+    sampler                           : "deterministic"        # Sampler type, supported values are "deterministic", "cm_multistep", "gamma_multistep"
+  
+  data_augmentation:
+    tango_data_augment                : True # Specify True if you want to use augmentation method proposed in TANGO 
+    augment_num                       : 3    
+    phase_aug_rate                    : 0.0  
+
+  checkpointing_params:
+    save_interval                     : 2000 # Save model checkpoint after every save_interval steps
+    output_dir                        : ""   # Path to save model checkpoints
+    with_tracking                     : True     # Specify True if you want to track training progress
+    report_to                         : "wandb"  # Report training progress to wandb
+
+  training_params:
+    total_training_steps              : 30000  
+    gradient_accumulation_steps       : 1      
+    per_device_train_batch_size       : 21    
+    num_train_epochs                  : 100    
+    lr                                : 0.00008
+    mixed_precision                   : 'no'   
+    model_grad_clip_value             : 1000.0
+    training_mode                     : "ctm" 
+    resume_from_checkpoint            : ""      
+    load_mean_std_state_path          : "" # Path to saved mean and std of whole dataset. If not specified the training module will calculate the mean and std for whole dataset.
+  
+  loss_params:
+    weight_schedule                   : "uniform"       
+    loss_type                         : 'feature_space' 
+    match_point                       : 'zs'            
+    unet_mode                         : 'full'          
+    consistency_weight                : 1.0             
+
+    apply_adaptive_weight             : "True"          # Specify True if you want to applu adaptive weight for DSM loss
+    dsm_loss_target                   : 'z_0'           
+    diffusion_weight_schedule         : "karras_weight" 
+    diffusion_schedule_sampler        : 'halflognormal' 
+    diffusion_training                : "True"          
+    diffusion_mult                    : 0.7             
+    denoising_weight                  : 0.2             
+
+  cfg_params: 
+    cfg_single_distill                : "False" 
+    single_target_cfg                 : 3.5     #
+    unform_sampled_cfg_distill        : "True"  
+    w_min                             : 1.0     
+    w_max                             : 10.0    
+
+  timestep_params:
+    schedule_sampler                  : "uniform" 
+    sample_s_strategy                 : "uniform"
+    time_continuous                   : "False"  
+
+  diffusion_prameterization:
+    parametrization                   : 'euler'  
+    inner_parametrization             : 'edm'    
+
+  pf_ode_params:
+    num_heun_step                     : 39       
+    num_heun_step_random              : "True"   
+    heun_step_strategy                : 'weighted' 
+    heun_step_multiplier              : 1.0        
+
+  ema_params:
+    ema_rate                          : "0.999"
+    target_ema_mode                   : "fixed" 
+    scale_mode                        : "fixed" 
+    start_ema                         : 0.999  
+    start_scales                      : 40      
+    end_scales                        : 40  
+    distill_steps_per_iter            : 50000   
+    
+  edm_params:                         # EDM params
+    sigma_min                         : 0.002 
+    sigma_max                         : 80.0  
+    rho                               : 7     
+    sigma_data                        : 0.50  
+
+  optimizer_params: 
+    weight_decay                      : 0.0
+
+  Other_parms:                        
+    latent_channels                   : 8        
+    latent_f_size                     : 16       
+    latent_t_size                     : 256       
+    lr_anneal_steps                   : 0        

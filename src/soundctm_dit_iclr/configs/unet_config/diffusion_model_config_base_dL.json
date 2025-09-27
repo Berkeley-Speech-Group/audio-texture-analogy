@@ -1,0 +1,46 @@
+{
+  "_class_name": "UNet1DConditionModel",
+  "act_fn": "silu",
+  "attention_head_dim": [
+    6,
+    12,
+    24,
+    24
+  ],
+  "block_out_channels": [
+    384,
+    768,
+    1536,
+    1536
+  ],
+  "center_input_sample": false,
+  "cross_attention_dim": 512,
+  "down_block_types": [
+    "CrossAttnDownBlock1D",
+    "CrossAttnDownBlock1D",
+    "CrossAttnDownBlock1D",
+    "DownBlock1D"
+  ],
+  "downsample_padding": 1,
+  "dual_cross_attention": false,
+  "flip_sin_to_cos": true,
+  "freq_shift": 0,
+  "in_channels": 64,
+  "layers_per_block": 3,
+  "mid_block_scale_factor": 1,
+  "norm_eps": 1e-05,
+  "norm_num_groups": 32,
+  "num_class_embeds": null,
+  "only_cross_attention": false,
+  "out_channels": 64,
+  "sample_size": 3446,
+  "up_block_types": [
+    "UpBlock1D",
+    "CrossAttnUpBlock1D",
+    "CrossAttnUpBlock1D",
+    "CrossAttnUpBlock1D"
+  ],
+  "use_linear_projection": true,
+  "upcast_attention": true,
+  "dropout": 0.0
+}

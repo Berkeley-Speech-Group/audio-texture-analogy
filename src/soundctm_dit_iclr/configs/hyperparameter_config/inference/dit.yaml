@@ -1,0 +1,39 @@
+Experiment:
+  Experiment_name                     : "" # Experiment Name for logging in WandB
+  Project_name                        : "" # Project Name for logging in WandB
+  
+  # Model config
+  text_encoder_name: "clap"  # Type of text encoder, clap
+  stage1_path: "ckpt/utils/"            # Path to VAE/stage1 model
+  ctm_unet_model_config: ""  # UNet model config. Specify only if diffusion_model_type is unet
+  teacher_model: ""          # Teacher model path. Not used while sampling
+
+  ema_model: "ckpt/models/ac_v2_ema_0999_030000.pt"     # Path to EMA denoiser of trained student model
+  training_args: "ckpt/models/ac_v2_summary.jsonl" # Path to summury.jsonl saved in output folder of trained model 
+
+  clap_model_path: "ckpt/utils/630k-audioset-best.pt"          # Path to pretrained CLAP model
+  diffusion_model_type: "dit"  # Diffusion model type unet/dit
+  version: v2 # Version of SoundCTM DIT 1B 
+
+  # Other inference args
+  nu: 1.0       
+  omega: 5.0     
+  num_steps: 1            # Number of sampling steps
+  sampler: "deterministic" # Sampler type, supported values are "deterministic", "cm_multistep", "gamma_multistep"
+  sampling_gamma: 0.       # Sampling gamma value for evaluation.
+  output_dir: "output" # Output directory for saving generated samples
+  
+  # Test dataset config
+  sampling_rate: 44100  
+  target_length: 10.031
+  prefix: ""
+  test_file: "data/test.csv"                 # path to test csv files containing captions and audio file names
+  batch_size: 1  
+  num_samples: 1                # Number of samples to generate per text caption.
+  text_audio_pair_dataset: True # Specify True if dataset was Text and audio paired
+  load_mean_std_state_path: "ckpt/models/z_stats.pth"  # path to .pth file containing mean and std of dataset that model was trained on
+
+  # EDM config
+  sigma_data: 0.50
+  sigma_max: 80.0
+  sigma_min: 0.002

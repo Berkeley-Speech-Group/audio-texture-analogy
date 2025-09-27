@@ -1,0 +1,23 @@
+FROM nvcr.io/nvidia/pytorch:24.07-py3
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install python packages required for training
+RUN pip install --upgrade pip
+RUN pip install torch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 --index-url https://download.pytorch.org/whl/cu118
+RUN pip install torchlibrosa
+RUN pip install accelerate diffusers transformers datasets
+RUN pip install git+https://github.com/descriptinc/audiotools
+RUN pip install h5py ftfy wget x_transformers
+RUN pip install descript-audio-codec dac
+RUN pip install laion-clap
+RUN pip install prettytable
+RUN pip install pandas openl3
+RUN pip install tensorflow==2.13.0
+RUN pip install timm
+RUN pip install pedalboard
+RUN pip install -e 'git+https://github.com/kkoutini/passt_hear21#egg=hear21passt'
+RUN pip install --upgrade numba numpy==1.24.3
+RUN pip uninstall flash_attn -y
+RUN pip uninstall transformer-engine -y
+RUN pip uninstall apex -y
