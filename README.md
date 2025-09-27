@@ -18,13 +18,16 @@ pip install -e .
 ```
 
 
+## Citation
 If you find our research useful for your work please cite:
-```
-@article{
-  author    = {Cheng, Kan Jen and Li, Tingle and Anumanchipalli, Gopala},
-  title     = {Audio Texture Manipulation by Exemplar-Based Analogy},
-  year      = {2025},
-  booktitle = {2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}
+```bibtex
+@inproceedings{cheng2025audio,
+  title={Audio Texture Manipulation by Exemplar-Based Analogy},
+  author={Cheng, Kan Jen and Li, Tingle and Anumanchipalli, Gopala},
+  booktitle={ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={1--5},
+  year={2025},
+  organization={IEEE}
 }
 ```
 
